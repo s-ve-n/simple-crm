@@ -5,15 +5,10 @@
       <th>E-Mail</th>
       <th>City</th>
     </tr>
-    <tr>
-      <td>test</td>
-      <td>test</td>
-      <td>test</td>
-    </tr>
-    <tr>
-      <td>test</td>
-      <td>test</td>
-      <td>test</td>
+    <tr *ngFor="let user of allUsers">
+      <td>{{ user["firstName"] }} {{ user["lastName"] }}</td>
+      <td>{{ user["email"] }}</td>
+      <td>{{ user["city"] }}</td>
     </tr>
   </table>
 </mat-card>

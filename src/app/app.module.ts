@@ -25,6 +25,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
     AngularFirestoreModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

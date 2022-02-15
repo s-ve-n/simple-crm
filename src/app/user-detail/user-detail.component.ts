@@ -30,6 +30,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   getUser() {
+    if(this.userId) {
     this.firestore
       .collection('users')
       .doc(this.userId)
@@ -38,6 +39,7 @@ export class UserDetailComponent implements OnInit {
         this.user = new User(user);
         console.log('Retrieved user: ', this.user);
       });
+    }
   }
 
   editUserDetail() {

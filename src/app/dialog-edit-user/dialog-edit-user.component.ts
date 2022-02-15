@@ -9,17 +9,21 @@ import { User } from 'src/models/user.class';
   styleUrls: ['./dialog-edit-user.component.scss'],
 })
 export class DialogEditUserComponent implements OnInit {
-  user!: User;
+  user: User = new User();
   userId!: string;
   loading: boolean = false;
   birthDate!: Date;
-  
-  constructor(public dialogRef: MatDialogRef<DialogEditUserComponent>, private firestore: AngularFirestore) {}
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogEditUserComponent>,
+    private firestore: AngularFirestore
+  ) {}
 
   ngOnInit(): void {}
 
   saveUser() {
     this.loading = true;
+    if (this.userId) {
       this.firestore
         .collection('users')
         .doc(this.userId)
@@ -30,3 +34,4 @@ export class DialogEditUserComponent implements OnInit {
         });
     }
   }
+}

@@ -13,16 +13,21 @@ describe('UserDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule, MatMenuModule, MatDialogModule, RouterModule.forRoot([])],
-      declarations: [ UserDetailComponent ],
+      imports: [
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        MatMenuModule,
+        MatDialogModule,
+        RouterModule.forRoot([]),
+      ],
+      declarations: [UserDetailComponent],
       providers: [
         {
           provide: MatDialogRef,
-          useValue: {}
-        }
-      ]
-    })
-    .compileComponents();
+          useValue: {},
+        },
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
